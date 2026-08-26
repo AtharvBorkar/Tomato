@@ -4,6 +4,7 @@ import connectDB from './config/df.js';
 import authRoute from './routes/auth.js';
 dotenv.config();
 const app = express();
+app.use(express.json());
 app.use("/api/auth", authRoute);
 const PORT = process.env.PORT || 5000;
 const apple = "apple";
