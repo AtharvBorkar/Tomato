@@ -7,6 +7,9 @@ const app = express()
 
 const PORT = process.env.PORT || 5000;
 
+const apple = "apple";
+console.log(apple);
+
 app.listen(PORT, () => {
     console.log(`Auth servics is running on port ${PORT}`);
 
