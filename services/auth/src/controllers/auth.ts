@@ -1,10 +1,11 @@
-import { Request, Response} from "express";
+// import { Request, Response} from "express";
 import User from "../model/User.js";
 import jwt from 'jsonwebtoken';
-export const loginUser = async(req:Request, res:Response) => {
-    try {
-        const {email, name, picture} = req.body
-        let user = await User.findOne({email})
+import TryCatch from "../middlewares/trycatch.js";
+
+export const loginUser = TryCatch(async(req,res)=>{
+    const {email, name, picture} = req.body;
+        let user = await User.findOne({email});
         if(!user){
             user = await User.create({
                 name,
@@ -21,10 +22,5 @@ export const loginUser = async(req:Request, res:Response) => {
             message: "Logged Sucess",
             token,
             user,
-        })
-    } catch (error: any) {
-        res.status(500).json({
-            message: error.message
-        })
-    }
-};
+        });
+})
