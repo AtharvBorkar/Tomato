@@ -6,7 +6,7 @@ const connectDB = async()=>{
             dbName:"Zomato_Clone",
         });
 
-        console.log("connect to mongodb")
+        console.log("connected to mongodb")
     } catch (error) {
         console.log(error);
     }

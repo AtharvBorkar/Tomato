@@ -4,7 +4,7 @@ const connectDB = async () => {
         await mongoose.connect(process.env.MONGO_URI, {
             dbName: "Zomato_Clone",
         });
-        console.log("connect to mongodb");
+        console.log("connected to mongodb");
     }
     catch (error) {
         console.log(error);
