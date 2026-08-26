@@ -16,7 +16,15 @@ export const loginUser = async(req:Request, res:Response) => {
         const token = jwt.sign({user}, process.env.JWT_SEC as string,{
             expiresIn: "15d",
         });
-    } catch (error) {
-        
+
+        res.status(200).json({
+            message: "Logged Sucess",
+            token,
+            user,
+        })
+    } catch (error: any) {
+        res.status(500).json({
+            message: error.message
+        })
     }
 };
