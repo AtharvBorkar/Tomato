@@ -28,5 +28,10 @@ export const addUserRole = TryCatch(async (req, res) => {
             message: "Unauthorized",
         });
     }
-    const {};
+    const { role } = req.body;
+    if (!allowedRoles.includes(role)) {
+        return res.status(400).json({
+            message: "Invalid role",
+        });
+    }
 });
