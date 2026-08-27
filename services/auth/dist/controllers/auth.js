@@ -23,4 +23,10 @@ export const loginUser = TryCatch(async (req, res) => {
 });
 const allowedRoles = ["customer", "rider", "seller"];
 export const addUserRole = TryCatch(async (req, res) => {
+    if (!req.user?._id) {
+        return res.status(401).json({
+            message: "Unauthorized",
+        });
+    }
+    const {};
 });
