@@ -45,4 +45,15 @@ export const addUserRole = TryCatch(async(req: AuthenticatedRequest, res)=>{
     }
 
     const user = await User.findByIdAndUpdate(req.user._id, {role}, {new:true})
+
+
+    if(!user){
+        return res.status(404).json({
+            message: "User not found",
+        });
+    }
+
+    const token = jwt.sign({user}, process.env.JWT_SEC as string,{
+            expiresIn: "15d",
+        });
 });
