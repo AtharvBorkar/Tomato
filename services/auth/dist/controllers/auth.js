@@ -21,3 +21,6 @@ export const loginUser = TryCatch(async (req, res) => {
         user,
     });
 });
+const allowedRoles = ["customer", "rider", "seller"];
+export const addUserRole = TryCatch(async (req, res) => {
+});
