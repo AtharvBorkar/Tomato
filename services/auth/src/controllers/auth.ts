@@ -43,4 +43,6 @@ export const addUserRole = TryCatch(async(req: AuthenticatedRequest, res)=>{
             message: "Invalid role",
         });
     }
+
+    const user = await User.findByIdAndUpdate(req.user._id, {role}, {new:true})
 });
