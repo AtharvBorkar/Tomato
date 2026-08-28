@@ -3,13 +3,13 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { authService } from "../main"
 import toast from "react-hot-toast"
-import { GoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 
 const Login = () => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
-    const responsegoogle = async(authResult: any) =>{
+    const responseGoogle = async(authResult: any) =>{
         setLoading(true)
         try {
             const result = await axios.post(`${authService}/api/auth/login`,{
@@ -26,8 +26,15 @@ const Login = () => {
             setLoading(false)
         }
     }
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: responseGoogle,
+        onError: responseGoogle,
+
+        flow: "auth-code",
+    })
   return (
-    <div>login</div>
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">login</div>
   )
 }
 
