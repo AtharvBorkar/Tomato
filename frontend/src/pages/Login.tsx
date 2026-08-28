@@ -34,7 +34,13 @@ const Login = () => {
         flow: "auth-code",
     })
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white px-4">login</div>
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">
+        <div className="w-full max-w-sm space-y-6">
+            <h1 className="text-center text-3x1 font-bold text-[#E23774]">
+                Tomato
+            </h1>
+        </div>
+    </div>
   )
 }
 
