@@ -1,6 +1,17 @@
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from "./pages/Home";
+import Login from './pages/login';
+
 const App = () => {
-  return <div className="text-red-500">App</div>;
-  
+  return <>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+  </Routes>
+  </BrowserRouter>
+  </>
+
 };
 
 export default App
