@@ -6,7 +6,7 @@ import toast from "react-hot-toast"
 
 const Login = () => {
     const [loading, setLoading] = useState(false)
-    const navigte = useNavigate()
+    const navigate = useNavigate()
 
     const responsegoogle = async(authResult: any) =>{
         setLoading(true)
@@ -16,9 +16,13 @@ const Login = () => {
             })
 
             localStorage.setItem("token", result.data.token)
-            toast
+            toast.success(result.data.message)
+            setLoading(false)
+            navigate("/")
         } catch (error) {
-            
+            console.log(error)
+            toast.error("Problem while login")
+            setLoading(false)
         }
     }
   return (
