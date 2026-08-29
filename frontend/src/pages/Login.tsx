@@ -44,7 +44,17 @@ const Login = () => {
 
             <p className="text-center text-sm text-gray-500">Log in or sign up to continue</p>
 
-            <button onClick={googleLogin} disabled={loading} className="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-300 bg-white px-4 py-3"><FcGoogle size={20}/></button>
+            <button onClick={googleLogin} disabled={loading} className="flex w-full items-center
+            justify-center gap-3 rounded-xl border border-gray-300 bg-white px-4 py-3">
+                <FcGoogle size={20} />
+                {loading ? "Signing in ..." : "Coontinue with Google"}
+            </button>
+
+            <p className="text-center text-xs text-gray-400">
+                By continuing, you agree with our {" "}
+                <span className="text-[#E23774]">Terms of Services</span> &{" "}
+                <span className="text-[#E23774]">Privacy Policy</span> &{" "}
+            </p>
         </div>
     </div>
   )
