@@ -10,10 +10,10 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
-    const responseGoogle = async(authResult: any) =>{
+    const responseGoogle = async(authResult: any) => {
         setLoading(true)
         try {
-            const result = await axios.post(`${authService}/api/auth/login`,{
+            const result = await axios.post(`${authService}/api/auth/login`, {
                 code: authResult["code"],
             })
 
@@ -47,7 +47,7 @@ const Login = () => {
             <button onClick={googleLogin} disabled={loading} className="flex w-full items-center
             justify-center gap-3 rounded-xl border border-gray-300 bg-white px-4 py-3">
                 <FcGoogle size={20} />
-                {loading ? "Signing in ..." : "Coontinue with Google"}
+                {loading ? "Signing in ..." : "Continue with Google"}
             </button>
 
             <p className="text-center text-xs text-gray-400">
