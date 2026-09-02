@@ -28,6 +28,13 @@ const SelectRole = () => {
             alert("Error adding role. Please try again.")
         }
     }
+    return (
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">
+        <div className="w-full max-w-md space-y-6">
+            <h1 className="text-center text-2xl font-bold">Choose Your Role</h1>
+        </div>
+    </div>
+    )
 }
 
 export default SelectRole;
