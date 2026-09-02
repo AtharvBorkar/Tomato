@@ -5,3 +5,9 @@ export interface User {
     image: string;
     role: string;
 }
+
+export interface LocationData {
+    latitude: number;
+    longitude: number;
+    foormattedAddress: string;
+}
