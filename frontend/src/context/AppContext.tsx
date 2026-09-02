@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useEffect, useState, type ReactNode } from "react";
 const AppContext = createContext(undefined);
 
 interface AppProviderProps {
@@ -33,3 +33,12 @@ export const AppProvider = ({children}: AppProviderProps) => {
         setLoading(false);
       }
     }
+
+    useEffect(() => {
+      // setLoading(true);
+      fetchUser();
+    }, []);
+
+    return <AppContext.Provider value={{}}>{children}</AppContext.Provider>
+
+  }
