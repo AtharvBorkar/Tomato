@@ -8,7 +8,7 @@ export const authService = "http://localhost:5000";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId="<647144605312-4htjhp50ug5jiaaogi0n4fk0863jnlt1.apps.googleusercontent.com>">
+    <GoogleOAuthProvider clientId="<579422474099-1cmra25uj9qpidoea21annhsl41h2s53.apps.googleusercontent.com>">
     <App />
     </GoogleOAuthProvider>;
   </StrictMode>,
