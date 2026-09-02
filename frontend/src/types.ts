@@ -11,3 +11,13 @@ export interface LocationData {
     longitude: number;
     foormattedAddress: string;
 }
+
+
+export interface AppContextType {
+    user: User | null;
+    isAuth: boolean;
+    loading: boolean;
+    location: LocationData | null;
+    loadingLocation: boolean;
+    city: string;
+}
