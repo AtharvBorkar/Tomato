@@ -32,6 +32,15 @@ const SelectRole = () => {
     <div className="flex min-h-screen items-center justify-center bg-white px-4">
         <div className="w-full max-w-md space-y-6">
             <h1 className="text-center text-2xl font-bold">Choose Your Role</h1>
+
+            <div className="space-y-4">
+                {roles.map((r) => (
+                    <button key={r} onClick={()=>setRole(r)} className="w-full py-3 px-4 rounded-xl border text-sm font-medium capitalize transition ${
+                        role === r ? "border">
+                        Continue as {r}
+                    </button>
+                ))}
+            </div>
         </div>
     </div>
     )
