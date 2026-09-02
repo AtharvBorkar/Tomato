@@ -26,7 +26,10 @@ export const AppProvider = ({children}: AppProviderProps) => {
         });
 
         setUser(data.user);
+        setIsAuth(true);
       } catch (error) {
-        console.error("Error fetching user:", error);
+        console.log("Error fetching user:", error);
+      } finally {
+        setLoading(false);
       }
     }
