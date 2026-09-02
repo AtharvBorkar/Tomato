@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import type { AppContextType, User } from "../types";
+import { authService } from "../main";
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -21,7 +22,7 @@ export const AppProvider = ({children}: AppProviderProps) => {
       try {
         const token = localStorage.getItem("token");
 
-        const {data} = await axios.get(`${authService/me}`, {
+        const {data} = await axios.get(`${authService}/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
