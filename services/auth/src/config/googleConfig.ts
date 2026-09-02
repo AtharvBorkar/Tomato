@@ -9,5 +9,9 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 export const oauth2client = new google.auth.OAuth2(
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
-    "authmessage"
+    "http://localhost:5173/login"
 )
+
+
+console.log("Client ID:", GOOGLE_CLIENT_ID);
+console.log("Client Secret exists:", !!GOOGLE_CLIENT_SECRET);
