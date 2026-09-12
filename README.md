@@ -1,11 +1,11 @@
 # Tomato
-Production-Ready Zomato Clone with Microservices, RabbitMQ &amp; Real-Time Tracking
-The application supports multiple roles:
-• Customer
-• Restaurant (Seller)
-• Delivery Partner (Rider)
-• Admin (Verification & Management)
-
+Production-Ready Zomato Clone with Microservices, RabbitMQ &amp; Real-Time Tracking<br>
+The application supports multiple roles:<br>
+• Customer<br>
+• Restaurant (Seller)<br>
+• Delivery Partner (Rider)<br>
+• Admin (Verification & Management)<br>
+<br>
 The backend is divided into 6 independent microservices:
 • Auth Service
 • Restaurant Service
